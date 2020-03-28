@@ -16,11 +16,11 @@ from .sdist import SdistBuilder
 from . import __version__
 
 metadata_dict = {
-    'name': 'flit_core',
+    'name': 'dflit_core',
     'version': __version__,
-    'author': 'Thomas Kluyver & contributors',
-    'author_email': 'thomas@kluyver.me.uk',
-    'home_page': 'https://github.com/takluyver/flit',
+    'author': 'David Fritzsche / flit_core by Thomas Kluyver & contributors',
+    'author_email': 'david.fritzsche@mvua.de',
+    'home_page': 'https://github.com/davidfritzsche/dflit',
     'summary': ('Distribution-building parts of Flit. '
                     'See flit package for more information'),
     'requires_dist': [
