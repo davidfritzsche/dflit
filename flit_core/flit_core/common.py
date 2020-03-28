@@ -299,7 +299,8 @@ class Metadata(object):
     metadata_version = "2.1"
 
     def __init__(self, data):
-        self.name = data.pop('name')
+        name = data.pop('name')
+        self.name = data.pop('pkg_name', name)
         self.version = data.pop('version')
         self.summary = data.pop('summary')
 

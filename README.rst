@@ -1,3 +1,16 @@
+Warning
+-------
+
+**dflit** is a minor fork of
+`flit <https://github.com/takluyver/flit>`_ and not intended for public
+use.
+
+Please use the original `flit <https://github.com/takluyver/flit>`_
+
+
+Original README
+---------------
+
 **Flit** is a simple way to put Python packages and modules on PyPI.
 It tries to require less thought about packaging and help you avoid common
 mistakes.

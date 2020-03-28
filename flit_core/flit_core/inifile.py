@@ -31,6 +31,7 @@ metadata_list_fields = {
 
 metadata_allowed_fields = {
     'module',
+    'pkg-name',
     'author',
     'author-email',
     'maintainer',
@@ -204,6 +205,7 @@ def _read_pkg_ini(path):
 class LoadedConfig(object):
     def __init__(self):
         self.module = None
+        self._pkg_name = None
         self.metadata = {}
         self.reqs_by_extra = {}
         self.entrypoints = {}
@@ -217,6 +219,15 @@ class LoadedConfig(object):
                 raise EntryPointsConflict
             else:
                 self.entrypoints['console_scripts'] = scripts_dict
+
+    @property
+    def pkg_name(self):
+        return self._pkg_name or self.module
+
+    @pkg_name.setter
+    def pkg_name(self, value):
+        self._pkg_name = value
+
 
 readme_ext_to_content_type = {
     '.rst': 'text/x-rst',
@@ -240,6 +251,7 @@ def _prep_metadata(md_sect, path):
     res = LoadedConfig()
 
     res.module = md_sect.get('module')
+    res.pkg_name = md_sect.get('pkg-name', None)
     if not isidentifier(res.module):
         raise ConfigError("Module name %r is not a valid identifier" % res.module)
 
