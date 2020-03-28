@@ -1,5 +1,5 @@
 [build-system]
-requires = ["dflit_core >=2.2.0,<4"]
+requires = ["dflit_core >=2.2.0.1,<4"]
 build-backend = "flit_core.buildapi"
 
 [tool.flit.metadata]
@@ -9,7 +9,7 @@ author="David Fritzsche / flit by Thomas Kluyver"
 author-email="david.fritzsche@mvua.de"
 home-page="https://github.com/davidfritzsche/dflit"
 requires=[
-    "dflit_core>=2.2.0",
+    "dflit_core>=2.2.0.1",
     "requests",
     "docutils",
     "pytoml",
